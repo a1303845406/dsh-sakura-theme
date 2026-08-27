@@ -25,15 +25,28 @@ node scripts/build.mjs
 node scripts/check.mjs
 ```
 
-## 安装到 web profile
+## 从 GitHub 安装
 
-在本插件目录的上级工作区执行：
+### 安装 GitHub Release（推荐）
+
+使用 GitHub CLI 下载当前 Release 安装包：
 
 ```powershell
-dsh plugin --profile web add ./plugins/dsh-sakura-theme
+gh release download v0.3.0 --repo a1303845406/dsh-sakura-theme --pattern "dsh-sakura-theme-0.3.0.tgz"
+dsh plugin --profile web add .\dsh-sakura-theme-0.3.0.tgz
 ```
 
-重新启动 `dsh web` 后生效。外观设置继续选择 Light、Dark 或 System；插件会自动切换晴樱与夜樱。
+也可以从 GitHub 源码构建安装：
+
+```powershell
+git clone https://github.com/a1303845406/dsh-sakura-theme.git
+Set-Location .\dsh-sakura-theme
+npm run build
+npm run check
+dsh plugin --profile web add .
+```
+
+完整重启 `dsh web` 后生效。外观设置继续选择 Light、Dark 或 System；插件会自动切换晴樱与夜樱。
 
 > 品牌替换需要停用内置 `ui-brand-official` occupant，因此更新插件后必须完整重启一次，单纯刷新页面不够。
 
