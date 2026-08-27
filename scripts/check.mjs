@@ -16,13 +16,20 @@ const required = [
   "assets/sakura-send.svg",
   "assets/sakura-new-chat.svg",
   "lib/index.js",
-  "lib/client.js"
+  "lib/client.js",
+  "README.md",
+  "README.en.md",
+  "THIRD_PARTY_NOTICES.md"
 ];
 
 for (const file of required) await access(join(root, file));
 
 if (pkg.name !== "dsh-sakura-theme") throw new Error("unexpected package name");
 if (pkg.dsh?.bundle?.patch !== "./cordis.patch.yml") throw new Error("missing dsh.bundle patch");
+if (pkg.publishConfig?.access !== "public") throw new Error("npm package must publish publicly");
+if (pkg.publishConfig?.registry !== "https://registry.npmjs.org/") throw new Error("npm package must publish to the official registry");
+if (!pkg.files?.includes("lib")) throw new Error("npm package must include prebuilt lib output");
+if (pkg.scripts?.prepack !== "npm run build && npm run check") throw new Error("prepack must build and validate the package");
 if (!pkg.dsh?.client?.inject?.includes("@deepseek-ai/dsh-client-ui-theme")) {
   throw new Error("theme client dependency is not declared");
 }
@@ -33,6 +40,11 @@ for (const dependency of [
 ]) {
   if (!pkg.dsh?.client?.inject?.includes(dependency)) {
     throw new Error(`brand client dependency is not declared: ${dependency}`);
+  }
+}
+for (const dependency of Object.keys(pkg.peerDependencies ?? {})) {
+  if (pkg.peerDependenciesMeta?.[dependency]?.optional !== true) {
+    throw new Error(`host-provided peer dependency must be optional: ${dependency}`);
   }
 }
 if (!patch.includes("name: dsh-sakura-theme")) throw new Error("bundle patch does not mount the package");

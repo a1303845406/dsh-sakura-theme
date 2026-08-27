@@ -4,6 +4,13 @@
 
 DeepSeek Harness 的完整樱花皮肤：浅色“晴樱”和深色“夜樱”。它跟随 Harness 自带的 Light / Dark / System 偏好，并把界面品牌替换为 Sakura Harness。
 
+> 本项目是社区维护的非官方插件，与 DeepSeek 官方没有隶属关系。
+
+## 兼容性
+
+- DeepSeek Harness Web `0.1.1-rc.2` 系列。
+- Node.js `20` 或更高版本。
+
 ## 功能
 
 - 覆盖主要背景、文字、边框、按钮、侧栏、输入框、菜单、代码块和滚动条 Token。
@@ -25,9 +32,17 @@ node scripts/build.mjs
 node scripts/check.mjs
 ```
 
-## 从 GitHub 安装
+## 安装
 
-### 安装 GitHub Release（推荐）
+### 从 npm 安装（推荐）
+
+发布到 npm 后可直接安装预构建包，不需要授权执行依赖构建脚本：
+
+```powershell
+dsh plugin --profile web add dsh-sakura-theme
+```
+
+### 从 GitHub Release 安装
 
 使用 GitHub CLI 下载当前 Release 安装包：
 
@@ -36,7 +51,9 @@ gh release download v0.3.0 --repo a1303845406/dsh-sakura-theme --pattern "dsh-sa
 dsh plugin --profile web add .\dsh-sakura-theme-0.3.0.tgz
 ```
 
-也可以从 GitHub 源码构建安装：
+### 从 GitHub 源码构建安装
+
+源码仓库不提交构建产物，因此克隆后需要先构建：
 
 ```powershell
 git clone https://github.com/a1303845406/dsh-sakura-theme.git

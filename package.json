@@ -2,6 +2,10 @@
   "name": "dsh-sakura-theme",
   "version": "0.3.0",
   "description": "Sakura Harness brand, icon, font, and Day/Night glass theme for DeepSeek Harness",
+  "author": {
+    "name": "a1303845406",
+    "url": "https://github.com/a1303845406"
+  },
   "keywords": [
     "deepseek-harness",
     "dsh-plugin",
@@ -17,6 +21,10 @@
   "bugs": {
     "url": "https://github.com/a1303845406/dsh-sakura-theme/issues"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "type": "module",
   "main": "./lib/index.js",
   "exports": {
@@ -26,11 +34,12 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "assets",
     "lib",
     "cordis.patch.yml",
     "README.md",
-    "README.en.md"
+    "README.en.md",
+    "THIRD_PARTY_NOTICES.md",
+    "assets/OFL-LXGW-WenKai.txt"
   ],
   "dsh": {
     "bundle": {
@@ -54,9 +63,28 @@
     "@deepseek-ai/dsh-client-ui-sidebar": "^0.1.1-rc.2",
     "@deepseek-ai/dsh-client-ui-theme": "^0.1.1-rc.2"
   },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-client-runtime": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-client-ui-conversation": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-client-ui-sidebar": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-client-ui-theme": {
+      "optional": true
+    }
+  },
   "scripts": {
     "build": "node scripts/build.mjs",
-    "check": "node scripts/check.mjs"
+    "check": "node scripts/check.mjs",
+    "prepack": "npm run build && npm run check",
+    "pack:plugin": "npm pack --pack-destination dist"
   },
   "engines": {
     "node": ">=20"
