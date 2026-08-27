@@ -9,6 +9,14 @@
     "sakura",
     "dark-mode"
   ],
+  "homepage": "https://github.com/a1303845406/dsh-sakura-theme#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a1303845406/dsh-sakura-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/a1303845406/dsh-sakura-theme/issues"
+  },
   "type": "module",
   "main": "./lib/index.js",
   "exports": {
