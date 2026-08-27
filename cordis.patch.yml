@@ -1,0 +1,7 @@
+# Replace the official brand occupant, then add the Sakura browser plugin.
+- id: ui-brand-official
+  disabled: true
+
+- insert:
+    - id: sakura-theme
+      name: dsh-sakura-theme
