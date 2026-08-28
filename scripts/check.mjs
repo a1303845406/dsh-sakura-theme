@@ -19,6 +19,8 @@ const required = [
   "lib/client.js",
   "README.md",
   "README.en.md",
+  "docs/screenshots/sakura-theme-light.png",
+  "docs/screenshots/sakura-theme-dark.png",
   "THIRD_PARTY_NOTICES.md"
 ];
 

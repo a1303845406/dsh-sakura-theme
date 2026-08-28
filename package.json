@@ -38,6 +38,7 @@
     "cordis.patch.yml",
     "README.md",
     "README.en.md",
+    "docs/screenshots/*.png",
     "THIRD_PARTY_NOTICES.md",
     "assets/OFL-LXGW-WenKai.txt"
   ],

@@ -1,17 +1,45 @@
-# dsh-sakura-theme
+# Sakura Harness Theme
 
 [English](./README.en.md) | 中文
 
-DeepSeek Harness 的完整樱花皮肤：浅色“晴樱”和深色“夜樱”。它跟随 Harness 自带的 Light / Dark / System 偏好，并把界面品牌替换为 Sakura Harness。
+**让 DeepSeek Harness 在保持专业与可读性的同时，多一点樱花盛开的生命力。**
+
+Sakura Harness Theme 是一款完整、可逆的 DeepSeek Harness Web 樱花主题。一次安装即可获得浅色“晴樱”与深色“夜樱”，并自动跟随 Harness 的 Light / Dark / System 偏好。它不只替换背景，还统一重塑品牌、色彩、字体、图标、卡片与交互状态，同时保持原有功能行为不变。
 
 > 本项目是社区维护的非官方插件，与 DeepSeek 官方没有隶属关系。
+
+## 实际使用效果
+
+以下截图来自插件在 DeepSeek Harness Web 中的真实运行界面。点击图片可查看原图。
+
+| 晴樱 · Light | 夜樱 · Dark |
+| --- | --- |
+| [![Sakura Harness 晴樱浅色主题实际效果](./docs/screenshots/sakura-theme-light.png)](./docs/screenshots/sakura-theme-light.png) | [![Sakura Harness 夜樱深色主题实际效果](./docs/screenshots/sakura-theme-dark.png)](./docs/screenshots/sakura-theme-dark.png) |
+
+## 为什么值得安装
+
+| 你得到的 | 实际价值 |
+| --- | --- |
+| 一套插件，两套完整主题 | 白天使用清透柔和的“晴樱”，夜间切换沉浸克制的“夜樱”，无需分别配置。 |
+| 从背景到控件的系统化设计 | 侧栏、输入区、菜单、代码块、滚动条和弹窗共享统一视觉语言，不是简单贴一张壁纸。 |
+| 独立的 Sakura Harness 品牌 | 原创樱花标志、字标、发送图标和新会话图标，让工作台拥有清晰、完整的个性。 |
+| 更适合中文长对话的阅读体验 | 内置霞鹜文楷屏幕阅读版 GB，正文温润清晰，代码区域仍保持等宽字体。 |
+| 可逆且尊重功能语义 | 不改变提交、导航或模型交互；停止、警告、文件等关键图标保持原义，卸载后恢复宿主外观。 |
+
+## 快速安装
+
+```powershell
+dsh plugin --profile web add dsh-sakura-theme
+```
+
+完整重启 `dsh web` 后即可使用。之后只需在外观设置中选择 Light、Dark 或 System，插件会自动切换晴樱与夜樱。
 
 ## 兼容性
 
 - DeepSeek Harness Web `0.1.1-rc.2` 系列。
 - Node.js `20` 或更高版本。
 
-## 功能
+## 设计与功能细节
 
 - 覆盖主要背景、文字、边框、按钮、侧栏、输入框、菜单、代码块和滚动条 Token。
 - 左侧与新会话首页使用原创 Sakura Harness 樱花标志和字标。
@@ -36,7 +64,7 @@ node scripts/check.mjs
 
 ### 从 npm 安装（推荐）
 
-发布到 npm 后可直接安装预构建包，不需要授权执行依赖构建脚本：
+可直接安装预构建包，不需要授权执行依赖构建脚本：
 
 ```powershell
 dsh plugin --profile web add dsh-sakura-theme
